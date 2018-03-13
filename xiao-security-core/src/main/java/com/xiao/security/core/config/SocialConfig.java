@@ -25,7 +25,7 @@ import javax.sql.DataSource;
  * @since 1.0.0
  */
 @Configuration
-@Order(1)
+@Order(1)  // 解决JdbcUsersConnectionRepository优先加载的问题
 @EnableSocial
 public class SocialConfig extends SocialConfigurerAdapter {
 
