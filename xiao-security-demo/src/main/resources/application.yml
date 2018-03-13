@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.226.133:3306/xiao?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: xiaojianjun
+  session:
+    store-type: none
+server:
+  port: 8080
+security:
+  basic:
+    enabled: true
+xiao:
+  security:
+    browser:
+#      signUpUrl: /xiao-demo-signUp.html   设置注册页面
+#      loginPage: /xiao-demo-signIn.html   设置登录页面
+      loginType: JSON  # 登录返回类型，可选项：REDIRECT，JSON
+    code:
+      image:
+        width: 500
+        height: 50
+        length: 4
+        expireIn: 60
+        url: /user,/aaa/*   # 需要使用图片校验码的链接
+      sms:
+        length: 6
+        expireIn: 60
+        url: /user,/aaa/*   # 需要使用短信验证码的链接
+    social:
+      authUrl: /qqLogin
+      qq:
+        app-id: 100550231     # 1106686341
+        app-secret: NRXKfawnKlrADQGt
+        providerId: callback.do   # authUrl + providerId 为授权回调地址
+      weixin:
+        app-id: wxaf12de6191462a57     # 1106686341
+        app-secret: a6549028201b198a0dcc6729299d04c4
+        providerId: weixin  # authUrl + providerId 为授权回调地址
+
+
+
+
+
+
+
